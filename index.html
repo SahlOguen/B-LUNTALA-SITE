@@ -191,7 +191,7 @@
         .service-body p { font-size:.95rem; color:#4a5568; margin-bottom:0; }
         .service-body .click-hint { margin-top:12px; font-size:.8rem; color:var(--accent); font-weight:600; }
 
-        /* TEAM */
+        /* ===== TEAM ===== */
         .team { background:var(--white); }
         .team-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:40px; text-align:center; }
         .team-card { background:var(--light); border-radius:var(--radius); padding:30px 20px 25px; box-shadow:var(--shadow); transition:var(--transition); }
@@ -200,6 +200,19 @@
         .team-card h3 { font-size:1.4rem; color:var(--primary); margin-bottom:4px; }
         .team-card .title { font-size:1rem; color:var(--accent); font-weight:600; margin-bottom:8px; }
         .team-card p { font-size:.95rem; color:#4a5568; margin-bottom:0; }
+
+        /* ===== Centrage des deux derniers membres ===== */
+        .team-bottom {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        .team-bottom .team-card {
+            flex: 0 1 300px;
+            max-width: 300px;
+        }
 
         /* QHSE & CONTEUDO LOCAL */
         #qhse, #conteudo-local { background:var(--light); }
@@ -313,6 +326,16 @@
             .nif-info { font-size:.65rem; padding:2px 10px; margin-left:5px; }
             .bubble-container { width:280px; height:280px; }
             .bubble { width:44px; height:44px; font-size:1.2rem; }
+
+            /* Sur mobile, les deux derniers passent en colonne */
+            .team-bottom {
+                flex-direction: column;
+                align-items: center;
+            }
+            .team-bottom .team-card {
+                flex: 0 1 100%;
+                max-width: 350px;
+            }
         }
         @media (max-width: 480px) {
             .services-grid {
@@ -482,12 +505,53 @@
     <!-- ===== EQUIPA ===== -->
     <section class="team" id="equipe">
         <div class="container">
-            <div class="section-title"><h2>A nossa Equipa de Direção</h2><p>Quatro especialistas apaixonados por proteger a sua empresa</p></div>
+            <div class="section-title">
+                <h2>A nossa Equipa de Direção</h2>
+                <p>Especialistas dedicados a proteger a sua empresa</p>
+            </div>
+
+            <!-- 4 premiers membres en grille -->
             <div class="team-grid">
-                <div class="team-card"><img src="TODF_CEO.png" alt="Bianchi Luntala"><h3>Sr. Bianchi Luntala</h3><div class="title">CEO &amp; Fundador</div><p>O CEO e Fundador é responsável pela definição da estratégia, gestão comercial, supervisão da qualidade das prestações e liderança das equipas.</p></div>
-                <div class="team-card"><img src="TOF_CELMA.png" alt="Celma Sebastiao"><h3>Senhora Celma Sebastiao</h3><div class="title">Chefe de Logística (CTO)</div><p>Especialista em segurança de redes e arquitetura cloud. Supervisiona todas as missões técnicas.</p></div>
-                <div class="team-card"><img src="TOF_VICENTE.png" alt="Joao Vicente Macaia"><h3>Sr. João Vicente Macaia</h3><div class="title">Diretor Técnico de Operações</div><p>Gere a relação com o cliente e a coordenação das equipas em campo para uma ótima reatividade.</p></div>
-                <div class="team-card"><img src="herminio.png" alt="Herminio Romeu Matsumbo"><h3>Sr. Herminio Romeu Matsumbo</h3><div class="title">Analista e Conferencista em Cibersegurança</div><p>Especialista em cibersegurança com mais de 5 anos de experiência em infraestruturas críticas.</p></div>
+                <div class="team-card">
+                    <img src="TODF_CEO.png" alt="Bianchi Luntala">
+                    <h3>Sr. Bianchi Luntala</h3>
+                    <div class="title">CEO &amp; Fundador</div>
+                    <p>O CEO e Fundador é responsável pela definição da estratégia, gestão comercial, supervisão da qualidade das prestações e liderança das equipas.</p>
+                </div>
+                <div class="team-card">
+                    <img src="CELMA.png" alt="Celma Sebastiao">
+                    <h3>Senhora Celma Sebastiao</h3>
+                    <div class="title">Chefe de Logística (CTO)</div>
+                    <p>Especialista em segurança de redes e arquitetura cloud. Supervisiona todas as missões técnicas.</p>
+                </div>
+                <div class="team-card">
+                    <img src="TOF_VICENTE.png" alt="Joao Vicente Macaia">
+                    <h3>Sr. João Vicente Macaia</h3>
+                    <div class="title">Diretor Técnico de Operações</div>
+                    <p>Gere a relação com o cliente e a coordenação das equipas em campo para uma ótima reatividade.</p>
+                </div>
+                <div class="team-card">
+                    <img src="herminio.png" alt="Herminio Romeu Matsumbo">
+                    <h3>Sr. Herminio Romeu Matsumbo</h3>
+                    <div class="title">Analista e Conferencista em Cibersegurança</div>
+                    <p>Especialista em cibersegurança com mais de 5 anos de experiência em infraestruturas críticas.</p>
+                </div>
+            </div>
+
+            <!-- 2 derniers membres centrés côte à côte -->
+            <div class="team-bottom">
+                <div class="team-card">
+                    <img src="Maura.png" alt="Maura Fernando">
+                    <h3>Senhora Maura Fernando</h3>
+                    <div class="title">Responsável Administrativa</div>
+                    <p>Especializada na gestão documental, de comunicações e de agendas, no atendimento a clientes e parceiros, bem como na supervisão de stocks, compras e equipa administrativa.</p>
+                </div>
+                <div class="team-card">
+                    <img src="ZICO.png" alt="ZICO">
+                    <h3>Sr. Gustavo Liumba</h3>
+                    <div class="title">Despachante Aduaneiro</div>
+                    <p>Especialista em desalfandegamento, preparação de documentos aduaneiros e conformidade legal, bem como na coordenação logística, rastreio de mercadorias e articulação entre clientes, transportadores e a alfândega.</p>
+                </div>
             </div>
         </div>
     </section>
